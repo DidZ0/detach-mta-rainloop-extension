@@ -59,7 +59,7 @@ function draw(toolbar, email) {
 const getSavedMoSize = function (data) {
   let diff = data.totalInbound - data.totalOutbound;
   diff = diff > 0 ? diff : 0;
-  return Math.round(diff / 1000000, 2);
+  return Math.ceil(diff / 1000000);
 };
 
 // Wait for the toolbar element to appear on the page
