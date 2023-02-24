@@ -12,9 +12,10 @@ function draw(toolbar, email) {
   button.innerText = 'Dashboard';
   button.classList.add('btn');
   button.addEventListener('click', function() {
-    window.open("https://detach-mta-dashboard.vercel.app/?mail="+encodeURIComponent(email));
+    window.open(
+      "https://detach.clebard.cloud/?mail=" + encodeURIComponent(email)
+    );
   });
-
   toolbar.insertAdjacentElement('afterbegin', button);
 
   const saved = document.createElement('span');
@@ -28,7 +29,7 @@ function draw(toolbar, email) {
   count.classList.add('countinfo');
 
   function refreshInfos(){
-    fetch('http://mail.clebard.cloud:3000/mails', {
+    fetch('https://api.detach.clebard.cloud/mails', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
