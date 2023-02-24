@@ -43,7 +43,7 @@ function draw(toolbar, email) {
 	const metrics = data.metrics
   	console.log(data.metrics)
 	saved.innerText = "Saved: "+getSavedMoSize(metrics)+"Mo" 
-	count.innerText = "Detached: "+metrics.totalAttachments+" - "+metrics.totalAttachments*100 / metrics.totalCount+"%"
+	count.innerText = "Detached: "+metrics.totalAttachments+" - "+Math.ceil(metrics.totalAttachments*100 / metrics.totalCount)+"%"
     })
     .catch(error => {
       console.error(error);
@@ -59,7 +59,7 @@ function draw(toolbar, email) {
 const getSavedMoSize = function (data) {
   let diff = data.totalInbound - data.totalOutbound;
   diff = diff > 0 ? diff : 0;
-  return Math.ceil(diff / 1000000);
+  return Math.floor(diff / 1000000);
 };
 
 // Wait for the toolbar element to appear on the page
