@@ -2,11 +2,15 @@
   "manifest_version": 2,
   "name": "RainLoop Extension",
   "version": "1.0",
-  "description": "Adds a button to RainLoop",
+  "description": "To add metrics to the rainloop UI client",
   "content_scripts": [
     {
-      "matches": ["*://webmail.clebard.cloud/*"],
-      "js": ["content.js"]
+      "matches": [
+        "*://webmail.clebard.cloud/*"
+      ],
+      "js": [
+        "content.js"
+      ]
     }
   ],
   "permissions": [
@@ -14,9 +18,9 @@
     "https://*/*"
   ],
   "icons": {
-    "16": "icon-16.png",
-    "48": "icon-48.png",
-    "128": "icon-128.png"
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
   },
   "web_accessible_resources": [
     "style.css"
